@@ -18,8 +18,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Pet Store! We have a variety of pets ready to be purchased. " +
-                "\nThese are the list of pets that are ready to be sold:" + pets );
+        PetStore petStore = new PetStore();
+
+        petStore.Buy("Boston Terrier", "Black", 100.00);
+        petStore.Buy("Dove", "White", 150.50);
+        petStore.Buy("Cheshire Cat", "Orange", 100.00);
+
+        System.out.println(petStore.getInventory());
+
+        petStore.Sell("Boston Terrier");
+        petStore.Sell("Dove");
+        petStore.Sell("Cheshire Cat");
+
+        System.out.println(petStore.getInventory());
+
 
 
 

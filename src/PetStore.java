@@ -34,8 +34,14 @@ public class PetStore {
 
     //inventory
     //has to say amount of animals left in the store
-    public String Inventory() {
-        String string = "animals available: " + InventoryList;
+    public String getInventory() {
+        String string = "Inventory" + "\n"
+                + "Pets available: " + InventoryList.size()
+                + "\n" + "Animal List: ";
+        System.out.println(string);
+//        for (PetStore p: InventoryList ) {
+//
+//        }
         //return string
         return string;
     }
