@@ -14,10 +14,51 @@
  * There are, HOWEVER, extra points for working jUnit tests that exercise your methods in the pet store.
  */
 
+//import arraylist
+import java.util.ArrayList;
+
 public class PetStore {
 
-    public static void main(String[] args) {
+    //buy and sell methods
+    //must be able to see what pets are available for purchase (inventory)
 
-        System.out.println("Hello World!");
+    //make inventory private and into an arraylist
+
+    private ArrayList InventoryList;
+
+    //initializing inventory arraylist in petstore
+    public PetStore() {
+
+        InventoryList = new ArrayList();
     }
+
+    //inventory
+    //has to say amount of animals left in the store
+    public String Inventory() {
+        String string = "animals available: " + InventoryList;
+        //return string
+        return string;
+    }
+
+    //buying method
+    //like add method, adding in the inventory
+    public void Buy(String type, String colour, double cost) {
+        if(type.equals("Boston Terrier")) {
+            InventoryList.add(new Dog(type, colour, cost));
+        } else if(type.equals("Cheshire Cat")) {
+            InventoryList.add(new Cat(type, colour, cost));
+        } else if(type.equals("Dove")) {
+            InventoryList.add(new Bird(type, colour, cost));
+        }
+    }
+
+    //selling method
+    public void Sell(String type) {
+        for (int i = 0; i > InventoryList.size(); i++){
+            if (InventoryList.get(i) == type){
+                InventoryList.set(i, null);
+            }
+        }
+    }
+
 }
